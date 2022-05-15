@@ -4,12 +4,20 @@
 //defining variables from DOM
 const submitButton = document.getElementById('submit');
 const grid = document.getElementById('pixelCanvas');
-const colorPicker = getElementById('colorPicker');
+const colorPicker = document.getElementById('colorPicker');
 let color = colorPicker.value;
-console.log(color);
-// ADD A VARIABLE FOR COLOR CHOSEN HERE
+
+function grabColor() {
+    color = colorPicker.value;
+    console.log(color);
+}
+
+colorPicker.addEventListener('change', grabColor) {
+    console.log(color);
+});
 
 // When size is submitted by the user, call makeGrid()
+
 
 function makeGrid() {
 
