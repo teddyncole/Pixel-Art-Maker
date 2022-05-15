@@ -4,15 +4,14 @@
 // Select size input
 
 //defining variables from DOM
-var submitButton = document.getElementById('submit');
-var grid = document.getElementById('pixelCanvas');
+const submitButton = document.getElementById('submit');
+const grid = document.getElementById('pixelCanvas');
 var width = document.getElementById('inputWidth');
 var height = document.getElementById('inputHeight');
-// var colorPicker = document.getElementById('colorPicker');
-// let color = colorPicker.value;
+const colorPicker = document.getElementById('colorPicker');
 
 //Adding event listener for color selection
-document.getElementById('colorPicker').addEventListener('change', function() {
+colorPicker.addEventListener('change', function() {
     var color = this.value;
     console.log(color);
 });
