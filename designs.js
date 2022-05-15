@@ -10,21 +10,18 @@ var height = document.getElementById('inputHeight');
 const colorPicker = document.getElementById('colorPicker');
 
 
-
-//Adding event listener for color selection
-// colorPicker.addEventListener('change', function() {
-//     var color = this.value;
-//     console.log(color);
-// });
-
-colorChange = function(color) {
+//adding function to change cell color
+colorChange = function() {
     // colorPicker.addEventListener('change', function() {
-    var newColor = color;
+    var newColor = colorPicker.value;
     console.log(newColor);
     return newColor;
 }
 
+
+//Adding event listener for color selection
 colorPicker.addEventListener('change', colorChange);
+
 
 //Adding event listener to change grid to chosen height and width
 height.addEventListener('change', function() {
@@ -34,26 +31,20 @@ width.addEventListener('change', function() {
     grid.style.width = width;
 })
 
+
+
 // When size is submitted by the user, call makeGrid()
+submitButton.addEventListener('click', function() {
+    makeGrid();
+})
 
 
 function makeGrid() {
-    //declaring variables for the grid and cells
     var grid = document.getElementById('pixelCanvas');
-    // var square = document.createElement('div');
-    // //changing cell color based on chosen one
-    // square.style.color = colorChange();
-    // //making cell border
-    // square.style.border = (solid, black);
-
-    // looping to create grid rows/columns and cells
     for (var m = grid.style.height; m > 0; m--) {
         var newRow = grid.insertRow();
         for (var i = grid.style.width; i > 0; i--) {
-            square = newRow.insertCell();
+            newRow.insertCell();
         }
-    }
-    for (var n = grid.style.width; n > 0; n--) {
-        
     }
 }
