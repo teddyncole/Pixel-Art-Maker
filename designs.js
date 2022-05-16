@@ -10,17 +10,12 @@ var height = document.getElementById('inputHeight');
 const colorPicker = document.getElementById('colorPicker');
 
 
-//adding function to change cell color
-colorChange = function() {
-    // colorPicker.addEventListener('change', function() {
+//adding function to change cell color using event listener for color selection
+colorChange = colorPicker.addEventListener('change', function() {
     var newColor = colorPicker.value;
     console.log(newColor);
     return newColor;
-}
-
-
-//Adding event listener for color selection
-colorPicker.addEventListener('change', colorChange);
+});
 
 
 //Adding event listener to change grid to chosen height and width
@@ -44,7 +39,8 @@ function makeGrid() {
     for (var m = grid.style.height; m > 0; m--) {
         var newRow = grid.insertRow();
         for (var i = grid.style.width; i > 0; i--) {
-            newRow.insertCell();
+            cell = newRow.insertCell();
+            }
         }
+    cell.style.color = colorChange();
     }
-}
