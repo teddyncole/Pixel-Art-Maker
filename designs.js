@@ -17,6 +17,14 @@ colorChange = colorPicker.addEventListener('change', function() {
     return newColor;
 });
 
+function addRows(rows) {
+    // let rowCount = 0;
+    var newRow = document.createElement("tr");
+    for (i = 0; i<rows; i++) {
+        // rowCount++;
+        document.getElementById('pixelCanvas').appendChild(newRow);
+    }
+}
 
 //Adding event listener to change grid to chosen height and width
 height.addEventListener('change', function() {
@@ -25,8 +33,6 @@ height.addEventListener('change', function() {
 width.addEventListener('change', function() {
     grid.style.width = width;
 })
-
-
 
 // When size is submitted by the user, call makeGrid()
 // submitButton.addEventListener('click', function() {
