@@ -17,43 +17,38 @@ colorChange = colorPicker.addEventListener('change', function() {
     return newColor;
 });
 
-// //function for adding cells based on number of wanted rows and columns
-// function addCells(rows, columns) {
-//     //variables for storing DOMD elements: table row and table cells
-//     var newRow = document.createElement("tr");
-//     // var newColumn = document.createElement("td");
-//     //for loop adds rows for each number of rows given as argument
-//     for (i = 0; i<rows; i++) {
-//         document.getElementById('pixelTable').appendChild(newRow);
-//         //for loop adds columns (cells in rows) for number of columns given as argument
-//         // for(j = 0; j<columns; j++){
-//         //     newRow.appendChild(newColumn);
-//         // }
-//     }
-// } 
 
 //Adding event listener to change grid to chosen height and width
 height.addEventListener('change', function() {
-    var rows = document.getElementById('inputHeight').value;
+    var rows = document.getElementById('inputHeight').value + 1;
     const row = document.createElement("tr");
+    const cell = document.createElement('td');
+    row.className = "row"
+    let rowNumber = document.getElementsByClassName("row");
     for (i = rows; i > 0; i--) {
-        document.getElementById('pixelCanvas').appendChild(row);
+        document.getElementById('pixelTable').appendChild(row);
+        row.appendChild(cell);
     }
 })
 
-width.addEventListener('change', function() {
-    // let rows = (document.querySelectorAll('tr').length) + 1;
-    // console.log(rows);
-    // let rowCount = 0;
-    // const cell = document.createElement('td');
-    // while (rowCount < rows) {
-    //     let currentRow = document.querySelectorAll('tr')[rowCount];
-    //     let nextRow = currentRow.nextElementSibling;
-    //     currentRow.appendChild(cell);
-    //     rowCount++;
-    //     console.log(rowCount);
-    // }
-})
+// let columnCount = 1;
+// //add event listener to change grid width
+// width.addEventListener('change', function() {
+//     columnCount += 1;
+//     let toAdd = columnCount;
+//     let rowCount = (document.querySelectorAll('tr').length) + 1;
+//     let allRows = document.getElementsByClassName("row");
+//     const cell = document.createElement('td');
+//     let counter = 0;
+//     let currentRow = document.querySelectorAll('tr')[counter];
+//     let nextRow = currentRow.nextElementSibling;
+//     for (const key in object) {
+//         if (Object.hasOwnProperty.call(object, key)) {
+//             const element = object[key];
+            
+//         }
+//     }
+// })
 
 
 // When size is submitted by the user, call makeGrid()
