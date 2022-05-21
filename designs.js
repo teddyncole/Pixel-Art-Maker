@@ -17,22 +17,34 @@ colorChange = colorPicker.addEventListener('change', function() {
     return newColor;
 });
 
-function addRows(rows) {
-    // let rowCount = 0;
-    var newRow = document.createElement("tr");
-    for (i = 0; i<rows; i++) {
-        // rowCount++;
-        document.getElementById('pixelCanvas').appendChild(newRow);
-    }
-}
+// //function for adding cells based on number of wanted rows and columns
+// function addCells(rows, columns) {
+//     //variables for storing DOMD elements: table row and table cells
+//     var newRow = document.createElement("tr");
+//     // var newColumn = document.createElement("td");
+//     //for loop adds rows for each number of rows given as argument
+//     for (i = 0; i<rows; i++) {
+//         document.getElementById('pixelTable').appendChild(newRow);
+//         //for loop adds columns (cells in rows) for number of columns given as argument
+//         // for(j = 0; j<columns; j++){
+//         //     newRow.appendChild(newColumn);
+//         // }
+//     }
+// }
 
 //Adding event listener to change grid to chosen height and width
 height.addEventListener('change', function() {
-    grid.style.height = height;
+    var rows = document.getElementById('inputHeight').value;
+    const row = document.createElement("tr");
+    for (i = rows; i > 0; i--) {
+        document.getElementById('pixelCanvas').appendChild(row);
+    }
 })
+
 width.addEventListener('change', function() {
     grid.style.width = width;
 })
+
 
 // When size is submitted by the user, call makeGrid()
 // submitButton.addEventListener('click', function() {
