@@ -29,18 +29,18 @@ width.addEventListener('change', function() {
 
 
 // When size is submitted by the user, call makeGrid()
-submitButton.addEventListener('click', function() {
-    makeGrid();
-})
+// submitButton.addEventListener('click', function() {
+//     makeGrid();
+// })
 
 
-function makeGrid() {
-    var grid = document.getElementById('pixelCanvas');
-    for (var m = grid.style.height; m > 0; m--) {
-        var newRow = grid.insertRow();
-        for (var i = grid.style.width; i > 0; i--) {
-            cell = newRow.insertCell();
-            }
-        }
-    cell.style.color = colorChange();
-    }
+// function makeGrid() {
+//     var grid = document.getElementById('pixelCanvas');
+//     for (var m = grid.style.height; m > 0; m--) {
+//         var newRow = grid.insertRow();
+//         for (var i = grid.style.width; i > 0; i--) {
+//             cell = newRow.insertCell();
+//             }
+//         }
+//     cell.style.color = colorChange();
+//     }
