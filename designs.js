@@ -30,7 +30,7 @@ colorChange = colorPicker.addEventListener('change', function() {
 //         //     newRow.appendChild(newColumn);
 //         // }
 //     }
-// }
+// } 
 
 //Adding event listener to change grid to chosen height and width
 height.addEventListener('change', function() {
@@ -42,7 +42,17 @@ height.addEventListener('change', function() {
 })
 
 width.addEventListener('change', function() {
-    grid.style.width = width;
+    // let rows = (document.querySelectorAll('tr').length) + 1;
+    // console.log(rows);
+    // let rowCount = 0;
+    // const cell = document.createElement('td');
+    // while (rowCount < rows) {
+    //     let currentRow = document.querySelectorAll('tr')[rowCount];
+    //     let nextRow = currentRow.nextElementSibling;
+    //     currentRow.appendChild(cell);
+    //     rowCount++;
+    //     console.log(rowCount);
+    // }
 })
 
 
