@@ -31,6 +31,49 @@ height.addEventListener('change', function() {
     }
 })
 
+width.addEventListener('change', function() {
+    var columns = document.getElementById('inputWidth').value + 1;
+    const cell = document.createElement('td');
+    let allRows = document.getElementsByClassName("row");
+    let number = 0;
+    for (j = columns; j > 0; j--) {
+        for (i = 0; i < allRows.length; i++) {
+            currentRow = allRows[number];
+            currentRow.appendChild(cell);
+            number++;
+        }
+    }
+})
+
+
+
+// TRYING INSTEAD TO ADD A LISTENER TO THE SUBMIT BUTTON AND JUST HAVE THE HEIGHT AND WIDTH LISTENERS STORE THEIR VALUE TO GENERATE THE GRID WHEN THE SUBMIT BUTTON IS PRESSED
+function makeGrid() {
+    let rows = height.value;
+    let columns = width.value;
+    let table = document.getElementById('pixelTable');
+    for (i = 0; i < rows; i++) {
+        var newRow = document.createElement('tr');
+        newRow.id = "row[i]";
+        table.appendChild(newRow);
+    }
+    
+}
+
+// makeGrid();
+
+
+
+
+
+
+
+
+
+
+
+
+
 // let columnCount = 1;
 // //add event listener to change grid width
 // width.addEventListener('change', function() {
