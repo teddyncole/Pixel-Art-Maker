@@ -57,7 +57,6 @@ class CalculatedRow{
 
 
 const firstRow = new CalculatedRow(6,1);
-// firstRow.createRow();
 
 
 
