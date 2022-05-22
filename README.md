@@ -1,4 +1,4 @@
-# pixel-art-maker
+# Pixel-Art-Maker
 
 <h2>About</h2>
 
