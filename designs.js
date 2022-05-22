@@ -29,7 +29,7 @@ function makeGrid(cells, rows) {
     //create new cell and clone it given number of times in row
     for (let i = 0; i < cells; i++) {
         var cell = document.createElement('td');
-        cell.id = "cell[i]";
+        // cell.id = "cell[i]";
         cell.class = "tableCells";
         row.appendChild(cell.cloneNode(true));
     }
@@ -47,9 +47,13 @@ colorChange = colorPicker.addEventListener('change', function() {
 });
 
 let colorChoice = colorPicker.value;
-var cells = document.getElementById('pixelTable').children;
+var cells = document.getElementsByTagName('td');
 
-
+for (c of cells) {
+    c.addEventListener('click', function() {
+        this.style.backgroundColor = 'red';
+    })
+}
 
 
 // When size is submitted by the user, call makeGrid()
