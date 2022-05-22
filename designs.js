@@ -8,7 +8,7 @@ var height = document.getElementById('inputHeight');
 const colorPicker = document.getElementById('colorPicker');
 
 
-//adding function to change cell color using event listener for color selection
+//adding event listener for color selection
 colorChange = colorPicker.addEventListener('change', function() {
     var newColor = colorPicker.value;
     console.log(newColor);
@@ -29,14 +29,18 @@ width.addEventListener('change', function() {
 
 //adding makeGrid function to add given number of rows w/ given number of cells inside
 function makeGrid(cells, rows) {
+    //variables for pixel table and new row
     let table = document.getElementById('pixelTable');
     var row = document.createElement('tr');
+    //adding first row to table
     table.appendChild(row);
     row.id = "row1"
+    //create new cell and clone it given number of times in row
     for (let i = 0; i < cells; i++) {
         var cell = document.createElement('td');
         row.appendChild(cell.cloneNode(true));
     }
+    //clone created row ^ given number of times and add them to table
     for (let j = 0; j < (rows - 1); j++) {
         table.appendChild(row.cloneNode(true));
     }
