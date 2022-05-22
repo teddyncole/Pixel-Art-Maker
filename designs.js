@@ -39,7 +39,7 @@ function makeGrid(cells, rows) {
     //variables for pixel table and new row
     let table = document.getElementById('pixelTable');
     var row = document.createElement('tr');
-    //adding first row to table
+    //adding first row to table; first row only includes cells if this is added
     table.appendChild(row);
     //create new cell and clone it given number of times in row
     for (let i = 0; i < cells; i++) {
@@ -55,6 +55,7 @@ function makeGrid(cells, rows) {
         table.addEventListener('click', colorChange);
     }
 }
+
 
 // When size is submitted by the user, call makeGrid()
 submitButton.addEventListener('click', function() {
