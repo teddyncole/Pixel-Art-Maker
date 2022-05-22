@@ -8,14 +8,6 @@ var height = document.getElementById('inputHeight');
 const colorPicker = document.getElementById('colorPicker');
 
 
-//adding event listener for color selection
-colorChange = colorPicker.addEventListener('change', function() {
-    var newColor = colorPicker.value;
-    console.log(newColor);
-    return newColor;
-});
-
-
 //Adding event listener to change grid to chosen height and width
 height.addEventListener('change', function() {
     height = document.getElementById('inputHeight');
@@ -34,10 +26,11 @@ function makeGrid(cells, rows) {
     var row = document.createElement('tr');
     //adding first row to table
     table.appendChild(row);
-    row.id = "row1"
     //create new cell and clone it given number of times in row
     for (let i = 0; i < cells; i++) {
         var cell = document.createElement('td');
+        cell.id = "cell[i]";
+        cell.class = "tableCells";
         row.appendChild(cell.cloneNode(true));
     }
     //clone created row ^ given number of times and add them to table
@@ -45,10 +38,22 @@ function makeGrid(cells, rows) {
         table.appendChild(row.cloneNode(true));
     }
 }
+//adding event listener for color selection
+colorChange = colorPicker.addEventListener('change', function() {
+    var newColor = colorPicker.value;
+    console.log(newColor);
+    colorPicker.value = newColor;
+    console.log(colorPicker.value);
+});
+
+let colorChoice = colorPicker.value;
+var cells = document.getElementById('pixelTable').children;
+
+
 
 
 // When size is submitted by the user, call makeGrid()
 submitButton.addEventListener('click', function() {
     makeGrid(width.value, height.value);
-    
+    console.log(cells.length);
 })
