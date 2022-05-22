@@ -19,6 +19,7 @@ width.addEventListener('change', function() {
     console.log(width.value);
 })
 
+
 //adding event listener for color selection
 var colorPick = colorPicker.addEventListener('change', function() {
     var newColor = colorPicker.value;
@@ -26,6 +27,7 @@ var colorPick = colorPicker.addEventListener('change', function() {
     colorPicker.value = newColor;
     console.log(colorPicker.value);
 });
+
 
 //adding function to change the cell color
 function colorChange(evt) {
@@ -58,6 +60,8 @@ function makeGrid(cells, rows) {
 
 
 // When size is submitted by the user, call makeGrid()
-submitButton.addEventListener('click', function() {
+submitButton.addEventListener('click', function(event) {
+    //stops submit button from refreshing page
+    event.preventDefault();
     makeGrid(width.value, height.value);
-})
+}, {once: true});
