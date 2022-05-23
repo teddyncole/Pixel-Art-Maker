@@ -59,9 +59,48 @@ function makeGrid(cells, rows) {
 }
 
 
+function clearGrid() {
+    const artTable = document.getElementById('pixelTable');
+    // console.log(artTable.childNodes.length);
+    var c = artTable.querySelectorAll('td');
+    for (let i = 0; i < c.length; i++) {
+        c[i].style.backgroundColor = 'white';
+    }
+}
+
+
 // When size is submitted by the user, call makeGrid()
 submitButton.addEventListener('click', function(event) {
     //stops submit button from refreshing page
     event.preventDefault();
+    let pixelTable = document.getElementById('pixelTable');
+    // if (pixelTable.firstChild) {
+    //     makeGrid(width.value, height.value);
+    // }
+    // else {
+    //     clearGrid(document.getElementById('pixelTable'));
+    //     // makeGrid(width.value, height.value);
+    // }
     makeGrid(width.value, height.value);
-}, {once: true});
+    clearGrid();
+});
+
+// submitButton.removeEventListener('click', function(event) {
+//     //stops submit button from refreshing page
+//     event.preventDefault();
+//     makeGrid(width.value, height.value);
+// });
+
+// submitButton.addEventListener('click', function(event) {
+//     //stops submit button from refreshing page
+//     event.preventDefault();
+//     let pixelTable = document.getElementById('pixelTable');
+//     clearGrid(pixelTable);
+// }, {once: true});
+
+// submitButton.removeEventListener('click', function(event) {
+//     //stops submit button from refreshing page
+//     event.preventDefault();
+//     let pixelTable = document.getElementById('pixelTable');
+//     clearGrid(pixelTable);
+// }, {once: true});
