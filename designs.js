@@ -33,6 +33,7 @@ var colorPick = colorPicker.addEventListener('change', function() {
 function colorChange(evt) {
     let color = colorPicker.value;
     evt.target.style.backgroundColor = color;
+    evt.target.className = 'hasColor';
 }
 
 
@@ -41,6 +42,7 @@ function makeGrid(cells, rows) {
     //variables for pixel table and new row
     let table = document.getElementById('pixelTable');
     var row = document.createElement('tr');
+    row.className = 'tableRow'
     //adding first row to table; first row only includes cells if this is added
     table.appendChild(row);
     //create new cell and clone it given number of times in row
@@ -58,14 +60,11 @@ function makeGrid(cells, rows) {
     }
 }
 
-
+//function to remove colors from grid, creates new grid 
 function clearGrid() {
     const artTable = document.getElementById('pixelTable');
-    // console.log(artTable.childNodes.length);
-    var c = artTable.querySelectorAll('td');
-    for (let i = 0; i < c.length; i++) {
-        c[i].style.backgroundColor = 'white';
-    }
+    artTable.replaceChildren();
+    makeGrid(width.value, height.value);
 }
 
 
@@ -74,33 +73,7 @@ submitButton.addEventListener('click', function(event) {
     //stops submit button from refreshing page
     event.preventDefault();
     let pixelTable = document.getElementById('pixelTable');
-    // if (pixelTable.firstChild) {
-    //     makeGrid(width.value, height.value);
-    // }
-    // else {
-    //     clearGrid(document.getElementById('pixelTable'));
-    //     // makeGrid(width.value, height.value);
-    // }
-    makeGrid(width.value, height.value);
+    var cells = pixelTable.querySelectorAll('td');
+    //handles resubmit and size changes
     clearGrid();
 });
-
-// submitButton.removeEventListener('click', function(event) {
-//     //stops submit button from refreshing page
-//     event.preventDefault();
-//     makeGrid(width.value, height.value);
-// });
-
-// submitButton.addEventListener('click', function(event) {
-//     //stops submit button from refreshing page
-//     event.preventDefault();
-//     let pixelTable = document.getElementById('pixelTable');
-//     clearGrid(pixelTable);
-// }, {once: true});
-
-// submitButton.removeEventListener('click', function(event) {
-//     //stops submit button from refreshing page
-//     event.preventDefault();
-//     let pixelTable = document.getElementById('pixelTable');
-//     clearGrid(pixelTable);
-// }, {once: true});
