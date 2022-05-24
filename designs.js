@@ -6,7 +6,7 @@ const submitButton = document.getElementById('submit');
 var width = document.getElementById('inputWidth');
 var height = document.getElementById('inputHeight');
 const colorPicker = document.getElementById('colorPicker');
-
+ 
 
 //Adding event listener to change grid to chosen height and width
 height.addEventListener('change', function() {
